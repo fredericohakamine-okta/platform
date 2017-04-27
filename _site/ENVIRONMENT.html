@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Setup your course environment</title>
+</head>
+<body>
+  <h1>Setup your course environment</h1>
+  <hr>
+  <h1 id="environment-setup-instructions">Environment Setup Instructions</h1>
+
+<h2 id="provision-environment-skytap">Provision environment (Skytap)</h2>
+
+<ul>
+  <li>Template: Okta ICE DC
+    <ul>
+      <li>4 CPUs</li>
+      <li>4 gb RAM</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="mysql">MySQL</h2>
+
+<ol>
+  <li>Go to https://dev.mysql.com/downloads/installer/</li>
+  <li>
+    <p>Download <code class="highlighter-rouge">mysql-installer-community-5.7.17.0.msi</code> (the biggest Windowsbinary)</p>
+
+    <p><img src="img/001.png" alt="Terminal with mysql installed" /></p>
+  </li>
+  <li>
+    <p>Launch and install with the Default options.</p>
+
+    <div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">Main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
+ <span class="o">}</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Proceed with the default options for all screens except:
+    <ul>
+      <li>Password: enter <code class="highlighter-rouge">Welcome1</code>.</li>
+      <li>Service: do not start MySQL when the machine is started.</li>
+    </ul>
+  </li>
+  <li>Complete the setup with the default options.</li>
+  <li>The Workbench will be launched.</li>
+  <li>Log into mysql and save the password.</li>
+  <li>Click Import. Import the single file <code class="highlighter-rouge">emp.sql</code>.</li>
+  <li>Expand the employees schema and test the data in the employees table.</li>
+  <li>Delete the other schemas provided with MySQL.</li>
+  <li>Stop the server.</li>
+</ol>
+
+<h2 id="jdk">JDK</h2>
+
+<ol>
+  <li>Download JDK 7 here: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html</li>
+  <li>Launch and execute the installer.</li>
+  <li>Record the installation path.</li>
+</ol>
+
+<h2 id="tomcat">Tomcat</h2>
+
+<ol>
+  <li>Go to https://tomcat.apache.org/download-60.cgi</li>
+  <li>Download the 32-bit/64-bit Windows Service Installer.</li>
+  <li>Launch the installer and proceed with the default options.</li>
+  <li>Select the JDK 7 path as the JDK for use.</li>
+  <li>After setup, stop the server.</li>
+</ol>
+
+<h2 id="install-postman">Install Postman</h2>
+
+<ol>
+  <li>Install Postman for Windows.</li>
+  <li>Test a Postman request to make sure Postman can hit the Internet.</li>
+  <li>Close Postman and create a shortcut in the desktop.</li>
+</ol>
+
+<h2 id="configure-the-hosts-file">Configure the Hosts file</h2>
+
+<ol>
+  <li>Launch Notepad as Administrator.</li>
+  <li>Open the hosts file (<code class="highlighter-rouge">C:\Windows\System 32\drivers\etc\hosts</code>).</li>
+  <li>Add the entry <code class="highlighter-rouge">127.0.0.1 mysql legacy.oktaice.com</code></li>
+  <li>Save and close.</li>
+</ol>
+
+<h2 id="shortcuts">Shortcuts</h2>
+
+<ol>
+  <li>In the bottom-right corner, make both MySQL and Tomcat available without expanding the menu.</li>
+</ol>
+
+<h3 id="install-opp-binaries">Install OPP binaries</h3>
+
+<ol>
+  <li>Download the <a href="opp_win.zip"><code class="highlighter-rouge">opp_win.zip</code></a> file under <code class="highlighter-rouge">C:\Users\Administrator\Downloads</code> and unzip its contents.</li>
+  <li>Copy the labs folder to <code class="highlighter-rouge">C:\</code>.</li>
+</ol>
+
+<h3 id="test-tomcat-connection">Test Tomcat connection</h3>
+
+<ol>
+  <li>Launch Chrome.</li>
+  <li>Access http://legacy.oktaice.com:8080.</li>
+  <li>Confirm that Tomcat Home is displayed.</li>
+  <li>Click <strong>Manager</strong>. Log in as <code class="highlighter-rouge">tomcat</code> / <code class="highlighter-rouge">Tra!nme4321</code>.</li>
+  <li>Confirm that the Tomcat Manager home is displayed.</li>
+  <li>Stop the servers.</li>
+</ol>
+
+<h2 id="expand-terminal">Expand terminal</h2>
+
+<ol>
+  <li>Launch terminal, right-click the top-right corner, and then click Properties.</li>
+  <li>Under Layout, change the Screen Buffer Size Width to 300 and save.</li>
+  <li>To test, launch CMD again and maximize it.</li>
+</ol>
+
+<h2 id="set-atom-as-default-text-editor">Set Atom as default text editor.</h2>
+
+<ol>
+  <li>Right-click a text file.</li>
+  <li>Change the default app to open it.</li>
+</ol>
+
+<h2 id="install-oidc-lab">Install OIDC Lab</h2>
+<ol>
+  <li>Install Postman for Windows.</li>
+  <li>Go to http://developer.okta.com/docs/api/resources/oauth-clients.html and download the <strong>Client Application API</strong> collection.</li>
+  <li>Register the Okta ICE environment with the following variables:
+    <div class="highlighter-rouge"><pre class="highlight"><code> url:
+ clientId:
+ clientSecret:
+ redirectUri:
+ serviceClientId:
+ serviceClientSecret:
+ authorizationServerId:
+ accessToken:
+</code></pre>
+    </div>
+  </li>
+</ol>
+
+<h2 id="install-api-as-a-master-lab">Install API as a Master Lab</h2>
+<ol>
+  <li>Download the apimaster.zip file under <code class="highlighter-rouge">C:\Users\Administrator\Downloads</code> and unzip its contents.</li>
+  <li>Copy the labs folder to <code class="highlighter-rouge">C:\labs</code>.</li>
+  <li>Launch Postman</li>
+  <li>Import the User and Environment collections from http://developer.okta.com/docs/api/getting_started/api_test_client.html.</li>
+  <li>Import the API as a Master collection from <code class="highlighter-rouge">C:\labs\apimaster</code>.</li>
+</ol>
+
+<h2 id="install-idp-discovery-lab">Install idp-discovery Lab</h2>
+<ol>
+  <li>Download the idpdiscovery.zip file under <code class="highlighter-rouge">C:\Users\Administrator\Downloads</code> and unzip its contents.</li>
+  <li>Copy the labs folder to <code class="highlighter-rouge">C:\labs</code>.</li>
+</ol>
+
+<h2 id="install-saml-tracer">Install SAML tracer</h2>
+<ol>
+  <li>Launch Firefox.</li>
+  <li>Go to Add Ons.</li>
+  <li>Search and install <code class="highlighter-rouge">SAML tracer</code>.</li>
+  <li>To confirm that its installed, click the hamburger menu (top-right corner) &gt; SAML tracer. (the SAML tracer window should appear).</li>
+</ol>
+
+<h2 id="install-radius-test-client">Install RADIUS test client</h2>
+<ol>
+  <li>Set Google Chrome as default browser (Chrome Settings &gt; Search for Default &gt; Set as default)</li>
+  <li>Go to <code class="highlighter-rouge">http://bit.ly/rtestclient</code></li>
+  <li>Download Radlogin for x86 Windows.</li>
+  <li>Run the Installer. Setup with default options.</li>
+  <li>Go to start menu and launch the Radius test client (localhost:8020 should be displayed).</li>
+  <li>Set <code class="highlighter-rouge">Tra!nme4321</code> as password.</li>
+  <li>Login as admin/Tra!nme4321.</li>
+</ol>
+
+<h2 id="sanity-check">Sanity Check</h2>
+<ol>
+  <li>Access the Windows VM.</li>
+  <li>Start MySQL and Tomcat.</li>
+  <li>Launch the Workbench, open the <code class="highlighter-rouge">employees</code> table, and confirm that the data is displayed.</li>
+  <li>Launch Chrome and access http://legacy.oktaice.com:8080.</li>
+  <li>Confirm that Tomcat Home is displayed.</li>
+  <li>Click <strong>Manager</strong>. Log in as <code class="highlighter-rouge">tomcat</code> / <code class="highlighter-rouge">Tra!nme4321</code>.</li>
+  <li>Confirm that the Tomcat Manager home is displayed.</li>
+  <li>Deploy and start the MySQL sample connector. (if it starts, everything is ok).</li>
+  <li>Undeploy the sample connector and stop all servers.</li>
+</ol>
+
+</body>
+</html>
