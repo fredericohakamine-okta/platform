@@ -1,5 +1,3 @@
-gems:
-  - jekyll-feed
 exclude:
   - README.md
   - Gemfile
