@@ -1,6 +1,6 @@
 ---
 layout: simple
-title: Setup your course environment
+title: Setup your Course Environment
 category: lab
 number: 1
 ---

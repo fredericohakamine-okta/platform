@@ -10,6 +10,6 @@ category: page
 
 {% for lab in site.pages | sort:number %}
   {% if lab.category == 'lab' %}
-  - [{{lab.title}}]({{ lab.url }})
+  - [{{ lab.number }}: {{lab.title}}]({{ lab.url }})
   {% endif %}
 {% endfor %}
