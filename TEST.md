@@ -1,6 +1,8 @@
 ---
 layout: simple
 title: Testing your Org
+category: lab
+number: 2
 ---
 
 ## Test your Virtual Machine
