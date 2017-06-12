@@ -1,2 +1,2 @@
 # ice-platform
-Ice platform one
+Ice platform information
